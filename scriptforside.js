@@ -1,17 +1,16 @@
-//tager fat i overskriften
+// tager fat i overskriften
 const overskrift = document.getElementById("stjernensliv");
-
-window.onload = function() { //window.onload sørger for at koden først kører når siden er loadet
-  setTimeout(() => {
-    overskrift.style.opacity = 1;
-  }, 500); // 1000 ms = 1 sekund
-};
-
-//tager fat i knappen
+// tager fat i knappen
 const knap = document.querySelector("#forside a");
 
-window.onload = function() { //window.onload sørger for at koden først kører når siden er loadet
+window.onload = function() {
+  // Fade ind på overskriften
   setTimeout(() => {
     overskrift.style.opacity = 1;
-  }, 500); // 1000 ms = 1 sekund
+  }, 500); // 0,5 sekund
+
+  // Fade ind på knappen lidt senere
+  setTimeout(() => {
+    knap.style.opacity = 1;
+  }, 1000); // 0,7 sekund
 };
