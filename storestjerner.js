@@ -19,13 +19,13 @@
         btn.addEventListener("click", function () {
             videoContainer.style.display = "block"; // viser videoen
             kryds.style.display = "block"; // viser krydset
+            stjernehobknap.style.display = "none"; // skjuler knappen
         });
     
     //når man klikker på krydset forsvinder både video,stjernehob og krydset
         kryds.addEventListener("click", function () {
             videoContainer.style.display = "none"; // skjuler videoen
             kryds.style.display = "none"; // skjuler krydset
-            stjernehobknap.style.display = "none"; // skjuler knappen
             supernovaTaage.style.display = "block"; // vis nye knapper + videoer
 
              // Lad browseren registrere ændringen
@@ -38,4 +38,9 @@
     }, 100); // lidt delay for effekt
 
 });
+    });
+
+    document.addEventListener("click", function () {
+        const lyd = document.querySelector("audio");
+        lyd.play();
     });
