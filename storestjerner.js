@@ -1,5 +1,7 @@
     // tager fat i knappen
     const stjernehobknap = document.querySelector("#stjernehobBtn");
+    const supernovaknap = document.querySelector("#supernovaBtn");
+    const taageknap = document.querySelector("#taageBtn");
 
     window.onload = function() {
         // Fade ind på knap
@@ -12,6 +14,7 @@
         const btn = document.getElementById("stjernehobBtn");
         const videoContainer = document.getElementById("motion1");
         const kryds = document.getElementById("kryds");
+        const supernovaTaage = document.getElementById("supernovataageknap");
     
         btn.addEventListener("click", function () {
             videoContainer.style.display = "block"; // viser videoen
@@ -23,5 +26,16 @@
             videoContainer.style.display = "none"; // skjuler videoen
             kryds.style.display = "none"; // skjuler krydset
             stjernehobknap.style.display = "none"; // skjuler knappen
-        });
+            supernovaTaage.style.display = "block"; // vis nye knapper + videoer
+
+             // Lad browseren registrere ændringen
+    setTimeout(() => {
+        supernovaknap.style.opacity = "1";
+    }, 100);
+
+    setTimeout(() => {
+        taageknap.style.opacity = "1";
+    }, 100); // lidt delay for effekt
+
+});
     });
