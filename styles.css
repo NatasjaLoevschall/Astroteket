@@ -4,7 +4,7 @@ body {
   overflow: hidden;     /* Forhindrer scrollbars */
   font-family: montserrat;
 }
-}
+
 /* Videoen fylder hele skærmen */
 #forside video {
   position: fixed;      /* Fikseret i baggrunden */
