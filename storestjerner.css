@@ -40,3 +40,16 @@ body {
     pointer-events: auto;
     }
 
+    #motion1 {
+        margin-top: 20px;
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 700px;
+    }   
+
+    #motion1 video {
+        width: 100%;
+        height: auto;
+    }
