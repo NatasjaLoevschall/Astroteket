@@ -35,8 +35,12 @@
      setTimeout(() => {
         supernovaknap.style.opacity = "1";
         taageknap.style.opacity = "1";
+    }, 3000); // lille delay for fade-
+    
+        setTimeout(() => {
         stjernemotion.style.opacity = "1";
     }, 100); // lille delay for fade-effekt
+    
 });
     });
 
