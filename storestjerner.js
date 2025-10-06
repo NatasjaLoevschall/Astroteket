@@ -2,6 +2,7 @@
     const stjernehobknap = document.querySelector("#stjernehobBtn");
     const supernovaknap = document.querySelector("#supernovaBtn");
     const taageknap = document.querySelector("#taageBtn");
+    const stjernemotion = document.getElementById("stjernemotion");
 
     window.onload = function() {
         // Fade ind på knap
@@ -27,16 +28,15 @@
             videoContainer.style.display = "none"; // skjuler videoen
             kryds.style.display = "none"; // skjuler krydset
             supernovaTaage.style.display = "block"; // vis nye knapper + videoer
+            stjernemotion.style.display = "flex"; // gør container synlig
 
              // Lad browseren registrere ændringen
-    setTimeout(() => {
+     // Fade knapper og videoer
+     setTimeout(() => {
         supernovaknap.style.opacity = "1";
-    }, 100);
-
-    setTimeout(() => {
         taageknap.style.opacity = "1";
-    }, 100); // lidt delay for effekt
-
+        stjernemotion.style.opacity = "1";
+    }, 100); // lille delay for fade-effekt
 });
     });
 
