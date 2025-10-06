@@ -100,3 +100,23 @@ body {
         transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
         opacity: 0;
         }
+
+        #stjernemotion {
+            display: flex;
+            gap: 20px; /* afstand mellem videoer */
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        
+        #stjernemotion video {
+            width: 300px;
+            padding-top: 280px;
+            padding-left: 130px;
+            padding-right: 200px;
+            height: auto;
+        }
+
+        #stjernemotion video.lillevideo {
+            width: 200px;
+        }
