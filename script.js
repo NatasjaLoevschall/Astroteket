@@ -14,3 +14,9 @@ window.onload = function() {
     knap.style.opacity = 1;
   }, 1500); // 1,5 sekund
 };
+
+  window.addEventListener('click', () => {
+    const intro = document.getElementById('intro');
+    intro.muted = false;
+    intro.play();
+  });
