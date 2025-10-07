@@ -84,7 +84,9 @@
         krydsSupernova.addEventListener("click", function () {
             document.getElementById("supernovavideo").style.display = "none";
             document.getElementById("supernovataageknap").style.display = "none";
+            document.getElementById("scroll").style.display = "block";
         });
+
     
         krydsTaage.addEventListener("click", function () {
             document.getElementById("taagevideo").style.display = "none";

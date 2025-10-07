@@ -160,5 +160,12 @@ body {
         cursor: pointer;
 }
 
-
+#scroll {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    height: auto;
+    width: 50px;
+    transform: translateX(-50%);
+    }
 
