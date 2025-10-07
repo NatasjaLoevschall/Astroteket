@@ -47,23 +47,29 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('forside').addEventListener('scroll', playIfVisible);
     window.addEventListener('resize', playIfVisible);
 
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const blackholeVideo = document.getElementById('blackhole');
+    let hasPlayed = false;
 
-    function playIfVisible() {
-        const rect = blackholeVideo.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-        if (isVisible && blackholeVideo.paused) {
+    function playIfAtBottom() {
+        // Check if user is at (or very near) the bottom of the page
+        const scrollY = window.scrollY || window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const bodyHeight = document.body.offsetHeight;
+        const atBottom = (scrollY + windowHeight) >= (bodyHeight - 2); // 2px tolerance
+
+        if (atBottom && !hasPlayed) {
             blackholeVideo.play();
-        } else if (!isVisible && !blackholeVideo.paused) {
+            hasPlayed = true;
+        } else if (!atBottom && !blackholeVideo.paused) {
             blackholeVideo.pause();
+            hasPlayed = false;
         }
     }
 
-    window.addEventListener('scroll', playIfVisible);
-    window.addEventListener('resize', playIfVisible);
-    playIfVisible();
+    window.addEventListener('scroll', playIfAtBottom);
+    window.addEventListener('resize', playIfAtBottom);
+    playIfAtBottom();
 });
-    
 
 
