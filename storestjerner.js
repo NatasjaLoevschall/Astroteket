@@ -54,6 +54,7 @@
         const taageBtn = document.getElementById("taageBtn");
         const supernovavideo = document.getElementById("supernovavideo");
         const taagevideo = document.getElementById("taagevideo");
+        
     
         // Når man klikker på SUPERNOVA
         supernovaBtn.addEventListener("click", function () {
@@ -71,3 +72,5 @@
             }, 100);
         });
     });
+
+    
