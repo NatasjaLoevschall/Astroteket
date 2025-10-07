@@ -73,4 +73,16 @@
         });
     });
 
+    document.addEventListener("DOMContentLoaded", function () {
+        // Find krydsene
+        const krydsSupernova = document.getElementById("krydsSupernova");
+        const krydsTaage = document.getElementById("krydsTaage");
     
+        krydsSupernova.addEventListener("click", function () {
+            document.getElementById("supernovavideo").style.display = "none";
+        });
+    
+        krydsTaage.addEventListener("click", function () {
+            document.getElementById("taagevideo").style.display = "none";
+        });
+    });
