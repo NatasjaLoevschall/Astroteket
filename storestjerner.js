@@ -48,3 +48,26 @@
         const lyd = document.querySelector("audio");
         lyd.play();
     });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const supernovaBtn = document.getElementById("supernovaBtn");
+        const taageBtn = document.getElementById("taageBtn");
+        const supernovavideo = document.getElementById("supernovavideo");
+        const taagevideo = document.getElementById("taagevideo");
+    
+        // Når man klikker på SUPERNOVA
+        supernovaBtn.addEventListener("click", function () {
+            supernovavideo.style.display = "block";
+            setTimeout(() => {
+                supernovavideo.classList.add("show");
+            }, 100);
+        });
+    
+        // Når man klikker på TÅGE
+        taageBtn.addEventListener("click", function () {
+            taagevideo.style.display = "block";
+            setTimeout(() => {
+                taagevideo.classList.add("show");
+            }, 100);
+        });
+    });

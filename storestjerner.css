@@ -112,3 +112,29 @@ body {
     z-index: -1; /* Sørger for at alt andet ligger ovenpå */
     }
 
+    #supernovavideo,
+    #taagevideo {
+
+        display: inline-block; /* så containeren kun fylder omkring videoen */
+    }
+
+    #supernovavideo video,
+#taagevideo video {
+    margin-top: 20px;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 85%;
+}
+
+#krydsSupernova,
+#krydsTaage {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 30px; /* størrelse på krydset */
+    height: 30px;
+    cursor: pointer;
+}
+
