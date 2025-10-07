@@ -1,19 +1,33 @@
 document.addEventListener('DOMContentLoaded', function() {
     const blackholeVideo = document.getElementById('blackhole');
-    const playBtn = document.getElementById('playBlackhole');
     const blackholeAudio = document.getElementById('blackhole-audio');
-    let audioTimeout = null;
+    let hasPlayed = false;
 
-    // Play video (with sound) and schedule audio after 5s on button click
-    playBtn.addEventListener('click', function() {
-        blackholeVideo.muted = false;
-        blackholeVideo.play();
-        playBtn.style.display = 'none';
+    // Play video and sound when scrolled to bottom
+    function playIfAtBottom() {
+        const scrollY = window.scrollY || window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const bodyHeight = document.body.offsetHeight;
+        const atBottom = (scrollY + windowHeight) >= (bodyHeight - 2); // 2px tolerance
 
-        if (audioTimeout) clearTimeout(audioTimeout);
-        audioTimeout = setTimeout(() => {
-            blackholeAudio.play();
-        }, 5000);
+        if (atBottom && !hasPlayed) {
+            blackholeVideo.play();
+            hasPlayed = true;
+        } else if (!atBottom && !blackholeVideo.paused) {
+            blackholeVideo.pause();
+            hasPlayed = false;
+        }
+    }
+
+    // Play sound when video starts
+    blackholeVideo.addEventListener('play', function() {
+        blackholeAudio.play();
+    });
+
+    // Pause and reset audio if video is paused
+    blackholeVideo.addEventListener('pause', function() {
+        blackholeAudio.pause();
+        blackholeAudio.currentTime = 0;
     });
 
     // Redirect to index.html when video ends
@@ -21,31 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'index.html';
     });
 
-    // Pause and reset audio if video is paused
-    blackholeVideo.addEventListener('pause', () => {
-        if (audioTimeout) clearTimeout(audioTimeout);
-        blackholeAudio.pause();
-        blackholeAudio.currentTime = 0;
-    });
+    window.addEventListener('scroll', playIfAtBottom);
+    window.addEventListener('resize', playIfAtBottom);
+    playIfAtBottom();
 });
-
-    // Optional: Pause video when not visible
-    function playIfVisible() {
-        const rect = blackholeVideo.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            // Only play if not paused and button is hidden
-            if (playBtn.style.display === 'none' && blackholeVideo.paused) {
-                blackholeVideo.play();
-            }
-        } else {
-            if (!blackholeVideo.paused) {
-                blackholeVideo.pause();
-            }
-        }
-    }
-
-    document.getElementById('forside').addEventListener('scroll', playIfVisible);
-    window.addEventListener('resize', playIfVisible);
 
 document.addEventListener('DOMContentLoaded', function() {
     const blackholeVideo = document.getElementById('blackhole');
@@ -72,4 +65,6 @@ document.addEventListener('DOMContentLoaded', function() {
     playIfAtBottom();
 });
 
+
+ 
 
