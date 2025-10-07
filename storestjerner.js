@@ -21,6 +21,7 @@
             videoContainer.style.display = "block"; // viser videoen
             kryds.style.display = "block"; // viser krydset
             stjernehobknap.style.display = "none"; // skjuler knappen
+
         });
     
     //når man klikker på krydset forsvinder både video,stjernehob og krydset
@@ -29,6 +30,8 @@
             kryds.style.display = "none"; // skjuler krydset
             supernovaTaage.style.display = "block"; // vis nye knapper + videoer
             stjernemotion.style.display = "flex"; // gør container synlig
+            supernovaknap.style.display = "none"; // skjuler Supernova-knap
+            taageknap.style.display = "block"; // viser kun Tåge-knap
 
              // Lad browseren registrere ændringen
      // Fade knapper og videoer
@@ -41,8 +44,8 @@
         stjernemotion.style.opacity = "1";
     }, 100); // lille delay for fade-effekt
     
-});
     });
+ });
 
     document.addEventListener("click", function () {
         const lyd = document.querySelector("audio");
@@ -80,9 +83,22 @@
     
         krydsSupernova.addEventListener("click", function () {
             document.getElementById("supernovavideo").style.display = "none";
+            document.getElementById("supernovataageknap").style.display = "none";
         });
     
         krydsTaage.addEventListener("click", function () {
             document.getElementById("taagevideo").style.display = "none";
         });
     });
+   
+    krydsTaage.addEventListener("click", function () {
+        supernovaBtn.style.display = "block"; // skjuler Supernova-knap    
+        supernovaBtn.style.opacity = 0; // start usynlig
+
+        setTimeout(() => {
+            supernovaBtn.style.transition = "opacity 0"; // fade effekt
+            supernovaBtn.style.opacity = 1; // fade ind
+        }, 300); // lille delay så browser registrerer ændringen
+    
+});
+
