@@ -1,20 +1,64 @@
 body {
     margin: 0; /* Fjerner standard margin */
     padding: 0; /* Fjerner standard padding */
-    overflow: hidden; /* Forhindrer scrollbars */
+    overflow-x: hidden; /* behold gerne denne */
     font-family: montserrat;
     }
+    #foersteside {
+    height: 100vh; /* fylder hele skærmen */
+    position: relative;
 
-    /* Videoen fylder hele skærmen */
-    #stjernehob video {
-    position: fixed; /* Fikseret i baggrunden */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Fylder hele skærmen uden at strække */
-    z-index: -1; /* Sørger for at alt andet ligger ovenpå */
     }
+
+   #andenVideo {
+   position: relative;
+   /* ingen z-index nødvendigt */
+   }
+
+   #andenVideo video {
+   display: block;
+   width: 100%;
+   height: 100vh;
+   object-fit: cover;
+   pointer-events: none;      /* klik skal ikke fanges af videoen */
+  }
+   #eksplosion {
+   position: absolute;
+   top: 50%;            /* centrerer lodret */
+   left: 50%;           /* centrerer vandret */
+   transform: translate(-50%, -50%); /* justerer præcis til midten */
+   z-index: 10;         /* ligger ovenpå videoen */
+   width: 80%;          /* du kan justere størrelsen */
+   opacity: 0;
+   transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+ #andenVideo a{
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color:white;
+  border: 1px solid white;
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+#stjernehob video {
+  position: absolute;     /* ikke fixed! */
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      
+  pointer-events: none;   /* lad klik gå igennem videoen */
+}
 
     #stjernehob img {
     position: absolute;
@@ -39,7 +83,9 @@ body {
     padding-right: 40px;
     transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
-    }
+    z-index: 1;
+}
+
 
     #stjernehobBtn.visible {
     opacity: 1;
@@ -85,6 +131,8 @@ body {
     padding-right: 40px;
     transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0;
+    z-index: 1;
+    pointer-events: auto;
     }
 
     #supernovaBtn{
@@ -102,17 +150,18 @@ body {
         padding-right: 40px;
         transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
         opacity: 0;
+        z-index: 1;
+        pointer-events: auto;
         }
     
     /* Videoen fylder hele skærmen */
     #stjernemotion video {
-    position: fixed; /* Fikseret i baggrunden */
-    top: 0;
-    left: 0;
+    position: absolute;     /* ikke fixed! */
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover; /* Fylder hele skærmen uden at strække */
-    z-index: -1; /* Sørger for at alt andet ligger ovenpå */
+    pointer-events: none;   /* lad klik gå igennem videoen */
     }
 
     #supernovavideo,
@@ -124,6 +173,7 @@ body {
         left: 50%;
         transform: translateX(-50%);
         height: 85%;
+        z-index: 2;
     }
 
     #supernovavideo video,

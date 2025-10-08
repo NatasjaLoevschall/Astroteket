@@ -3,6 +3,11 @@
     const supernovaknap = document.querySelector("#supernovaBtn");
     const taageknap = document.querySelector("#taageBtn");
     const stjernemotion = document.getElementById("stjernemotion");
+    // tager fat i overskriften
+const overskrift = document.getElementById("eksplosion");
+// tager fat i knappen
+const knap = document.querySelector("#detonerBtn");
+
 
     window.onload = function() {
         // Fade ind på knap
@@ -103,4 +108,16 @@
         }, 300); // lille delay så browser registrerer ændringen
     
 });
+
+//Knapper efter man har fået lov til at scrolle
+
+  // Fade ind på overskriften
+  setTimeout(() => {
+    overskrift.style.opacity = 1;
+  }, 500); // 0,5 sekund
+
+  // Fade ind på knappen lidt senere
+  setTimeout(() => {
+    knap.style.opacity = 1;
+  }, 1500); // 1,5 sekund
 
