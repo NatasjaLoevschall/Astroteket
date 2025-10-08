@@ -3,10 +3,7 @@
     const supernovaknap = document.querySelector("#supernovaBtn");
     const taageknap = document.querySelector("#taageBtn");
     const stjernemotion = document.getElementById("stjernemotion");
-    // tager fat i overskriften
-const overskrift = document.getElementById("eksplosion");
-// tager fat i knappen
-const knap = document.querySelector("#detonerBtn");
+ 
 
 
     window.onload = function() {
@@ -85,14 +82,15 @@ const knap = document.querySelector("#detonerBtn");
         // Find krydsene
         const krydsSupernova = document.getElementById("krydsSupernova");
         const krydsTaage = document.getElementById("krydsTaage");
+        const scrollEl = document.getElementById("scroll");
     
         krydsSupernova.addEventListener("click", function () {
             document.getElementById("supernovavideo").style.display = "none";
             document.getElementById("supernovataageknap").style.display = "none";
-            document.getElementById("scroll").style.display = "block";
+            document.getElementById("andenVideo").style.display = "block"; // start usynlig
+            scrollEl.style.display = "block";
         });
-
-    
+       
         krydsTaage.addEventListener("click", function () {
             document.getElementById("taagevideo").style.display = "none";
         });
@@ -110,14 +108,47 @@ const knap = document.querySelector("#detonerBtn");
 });
 
 //Knapper efter man har fået lov til at scrolle
+// ---- Fade ind på overskrift og knap når #andenVideo bliver synlig ----
+const andenVideo = document.getElementById("andenVideo");
+const overskrift = document.getElementById("eksplosion");
+const knap = document.getElementById("detonerBtn");
 
-  // Fade ind på overskriften
-  setTimeout(() => {
-    overskrift.style.opacity = 1;
-  }, 500); // 0,5 sekund
+// Gør klar (skjult fra start)
+overskrift.style.opacity = 0;
+knap.style.opacity = 0;
 
-  // Fade ind på knappen lidt senere
-  setTimeout(() => {
-    knap.style.opacity = 1;
-  }, 1500); // 1,5 sekund
+// Brug IntersectionObserver til at opdage når man scroller ned
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Når #andenVideo er synlig, fade elementerne ind
+      setTimeout(() => { overskrift.style.opacity = 1; }, 200);
+      setTimeout(() => { knap.style.opacity = 1; }, 700);
+    }
+  });
+}, {
+  threshold: 0.1 // hvor meget af elementet skal være synligt før det tæller (10%)
+});
+
+// Sæt observatøren på #andenVideo
+observer.observe(andenVideo);
+
+document.addEventListener("DOMContentLoaded", function () {
+  const detonerBtn = document.getElementById("detonerBtn");
+  const blackhole = document.getElementById("blackhole");
+  const musik = document.querySelector("audio"); // <-- tilføjet!
+
+  detonerBtn.addEventListener("click", function () {
+    document.getElementById("eksplosion").style.display = "none"; // skjuler overskrift
+    detonerBtn.style.display = "none"; // skjuler knappen
+    blackhole.classList.add("show");
+    blackhole.play(); // starter videoen
+
+        // 🎬 Når blackhole-videoen slutter → hop til ny side
+    blackhole.addEventListener("ended", function () {
+      window.location.href = "nextpage.html"; // ← ændr dette til din næste side
+    });
+
+  });
+});
 

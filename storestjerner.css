@@ -12,6 +12,7 @@ body {
 
    #andenVideo {
    position: relative;
+   display: none;
    /* ingen z-index nødvendigt */
    }
 
@@ -211,11 +212,25 @@ body {
 }
 
 #scroll {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    height: auto;
-    width: 50px;
-    transform: translateX(-50%);
-    }
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  width: 50px;
+  transform: translateX(-50%);
+}
+#blackhole {
+  opacity: 0;
+  transition: opacity 6s cubic-bezier(0.25, 0.1, 0.25, 1); /* mere smooth */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 5;
+  pointer-events: none; /* så man stadig kan klikke på andet */
+}
 
+#blackhole.show {
+  opacity: 1;
+}
