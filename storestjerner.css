@@ -128,43 +128,43 @@
       display: none; /* starter skjult */
     }
     
-    #taageBtn{
-      position: absolute;
-      top: 85%;
-      left: 66.8%;
-      transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0);
-      color:white;
-      border: 1px solid white;
-      cursor: pointer;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 40px;
-      padding-right: 40px;
-      transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 0;
-      z-index: 1;
-      pointer-events: auto;
+  #taageBtn{
+    position: absolute;
+    top: 85%;
+    left: 66.8%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0);
+    color:white;
+    border: 1px solid white;
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 35px;
+    padding-right: 35px;
+    transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: auto;
     }
 
     #supernovaBtn{
-      position: absolute;
-      top: 85%;
-      left: 36%;
-      transform: translateX(-50%);
-      background-color: rgba(0, 0, 0, 0);
-      color:white;
-      border: 1px solid white;
-      cursor: pointer;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 40px;
-      padding-right: 40px;
-      transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 0;
-      z-index: 1;
-      pointer-events: auto;
-    }
+        position: absolute;
+        top: 85%;
+        left: 36%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0);
+        color:white;
+        border: 1px solid white;
+        cursor: pointer;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 60px;
+        padding-right: 60px;
+        transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        z-index: 1;
+        pointer-events: auto;
+        }
     
     /* Videoen fylder hele skærmen */
     #stjernemotion video {
