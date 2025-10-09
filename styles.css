@@ -41,3 +41,12 @@ body {
   opacity: 0;
   transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+#lydikon {
+  position: fixed;       /* Sørger for at pilen altid er synlig */
+  bottom: 20px;          /* Afstand fra bunden */
+  right: 20px;           /* Afstand fra højre kant */
+  width: 30px;           /* Justér størrelse efter behov */
+  cursor: pointer;       /* Gør den klikbar */
+}
+
