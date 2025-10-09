@@ -14,12 +14,6 @@ body {
     -ms-overflow-style: none;   /* Skjul scrollbar i IE og gammel Edge */
     }
 
-    /* Skjul scrollbar i Chrome, Safari og Opera */
-    html::-webkit-scrollbar, 
-    body::-webkit-scrollbar {
-  display: none;
-    }
-
     #foersteside {
     height: 100vh; /* fylder hele skærmen */
     position: relative;
