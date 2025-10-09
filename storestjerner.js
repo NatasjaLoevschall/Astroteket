@@ -90,6 +90,7 @@
             document.getElementById("andenVideo").style.display = "block"; // start usynlig
             scrollEl.style.display = "block";
         });
+        
        
         krydsTaage.addEventListener("click", function () {
             document.getElementById("taagevideo").style.display = "none";
