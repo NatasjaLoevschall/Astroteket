@@ -4,6 +4,16 @@ body {
     overflow-x: hidden; /* behold gerne denne */
     font-family: montserrat;
     }
+
+    html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* behold horisontal skjul */
+    overflow-y: scroll; /* behold scroll-effekten */
+    scrollbar-width: none;      /* Skjul scrollbar i Firefox */
+    -ms-overflow-style: none;   /* Skjul scrollbar i IE og gammel Edge */
+    }
+
     #foersteside {
     height: 100vh; /* fylder hele skærmen */
     position: relative;
@@ -233,4 +243,12 @@ body {
 
 #blackhole.show {
   opacity: 1;
+}
+
+#lydikon {
+  position: fixed;       /* Sørger for at pilen altid er synlig */
+  bottom: 20px;          /* Afstand fra bunden */
+  right: 20px;           /* Afstand fra højre kant */
+  width: 30px;           /* Justér størrelse efter behov */
+  cursor: pointer;       /* Gør den klikbar */
 }
