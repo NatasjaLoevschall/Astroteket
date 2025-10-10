@@ -89,6 +89,10 @@
             document.getElementById("supernovataageknap").style.display = "none";
             document.getElementById("andenVideo").style.display = "block"; // start usynlig
             scrollEl.style.display = "block";
+
+            setTimeout(() => {
+                scrollEl.style.opacity = 1;
+            }, 100);
         });
         
        
@@ -128,7 +132,7 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.1 // hvor meget af elementet skal være synligt før det tæller (10%)
+  threshold: 0.3 // hvor meget af elementet skal være synligt før det tæller (10%)
 });
 
 // Sæt observatøren på #andenVideo

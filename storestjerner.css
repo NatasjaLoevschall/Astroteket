@@ -221,13 +221,25 @@ body {
         cursor: pointer;
 }
 
-#scroll {
+#scroll{
   position: absolute;
   bottom: 5%;
   left: 50%;
   width: 50px;
   transform: translateX(-50%);
+  transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
 }
+#scroll img {
+  width: 100%;
+  height: auto;
+}
+
+#scroll.visible {
+    opacity: 1;
+    pointer-events: auto;
+    }
+
 #blackhole {
   opacity: 0;
   transition: opacity 6s cubic-bezier(0.25, 0.1, 0.25, 1); /* mere smooth */
