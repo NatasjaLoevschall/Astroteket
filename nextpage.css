@@ -107,6 +107,6 @@ body {
     position: fixed;       /* Sørger for at pilen altid er synlig */
     bottom: 20px;          /* Afstand fra bunden */
     right: 20px;           /* Afstand fra højre kant */
-    width: 30px;           /* Justér størrelse efter behov */
+    width: 20px;           /* Justér størrelse efter behov */
     cursor: pointer;       /* Gør den klikbar */
     }
